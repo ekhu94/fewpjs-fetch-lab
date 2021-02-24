@@ -1,5 +1,9 @@
-function fetchBooks() {
+// import { default as axios } from "axios"
 
+const fetchBooks = () => {
+  return fetch('https://anapioficeandfire.com/api/books')
+    .then(resp => resp.json())
+    .then(data => renderBooks(data))
 }
 
 function renderBooks(books) {
